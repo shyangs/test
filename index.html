@@ -26,7 +26,7 @@
         domMenuitem.setAttribute("command", "context");
         domMenuitem.setAttribute("label", "This command has javascript");
         // domMenuitem.setAttribute("onclick", "alert('command clicked')");
-        domMenuitem.addEventListener("click", function(){
+        function handle(){
             var domTextarea = document.createElement('textarea');
             domTextarea.textContent = "42";
             domTextarea.style.height = 0;
@@ -40,7 +40,9 @@
             domTextarea.remove();
             domTextarea = null;
             alert('command clicked');
-        });
+        }
+        domMenuitem.addEventListener("click", handle);
+        domMenuitem.addEventListener("touchend", handle);
         domMenu.appendChild(domMenuitem);
         document.body.appendChild(domMenu);
         document.getElementById("myLink").setAttribute("contextmenu", "fcltHTML5Menu");
