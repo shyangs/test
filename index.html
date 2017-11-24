@@ -27,11 +27,26 @@
         domMenuitem.setAttribute("label", "This command has javascript");
         // domMenuitem.setAttribute("onclick", "alert('command clicked')");
         domMenuitem.addEventListener("click", function(){
+            var domTextarea = document.createElement('textarea');
+            domTextarea.textContent = "42";
+            domTextarea.style.height = 0;
+            domTextarea.style.width = 0;
+            domTextarea.style.borderWidth = 0;
+            domTextarea.style.padding = 0;
+            domTextarea.style.margin = 0;
+            document.body.appendChild(domTextarea);
+            domTextarea.select();
+            document.execCommand('copy');
+            domTextarea.remove();
+            domTextarea = null;
             alert('command clicked');
         });
         domMenu.appendChild(domMenuitem);
         document.body.appendChild(domMenu);
         document.getElementById("myLink").setAttribute("contextmenu", "fcltHTML5Menu");
+
+        domMenuitem = null;
+        domMenu = null;
     </script>
 </body>
 </html>
