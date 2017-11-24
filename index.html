@@ -29,11 +29,11 @@
         function handle(){
             var domTextarea = document.createElement('textarea');
             domTextarea.textContent = "42";
-            domTextarea.style.height = 0;
-            domTextarea.style.width = 0;
-            domTextarea.style.borderWidth = 0;
-            domTextarea.style.padding = 0;
-            domTextarea.style.margin = 0;
+            // domTextarea.style.height = 0;
+            // domTextarea.style.width = 0;
+            // domTextarea.style.borderWidth = 0;
+            // domTextarea.style.padding = 0;
+            // domTextarea.style.margin = 0;
             document.body.appendChild(domTextarea);
             domTextarea.select();
             document.execCommand('copy');
