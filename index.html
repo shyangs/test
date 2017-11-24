@@ -10,11 +10,25 @@
 </head>
 <body>
     <div contextmenu="fcltHTML5Menu">HTML5 Context Menus</div>
-    <a href="//developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/contextmenu" contextmenu="fcltHTML5Menu">____link____<a>
-    <menu type="context" id="fcltHTML5Menu">
+    <a href="//developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/contextmenu" contextmenu="fcltHTML5Menu">____link____</a>
+    <hr>
+    <a id="myLink" href="//developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/contextmenu" contextmenu="fcltHTML5Menu">____Link____</a>
+    <!-- <menu type="context" id="fcltHTML5Menu">
         <menuitem type="command" label="This command has javascript" onclick="alert('command clicked')">
           Commands don't render their contents.
         </menuitem>
-    </menu>
+    </menu> -->
+    <script>
+        var domMenu = document.createElement("menu");
+        var domMenuitem = document.createElement("menuitem");
+        domMenu.setAttribute("type", "context");
+        domMenu.setAttribute("id", "fcltHTML5Menu");
+        domMenuitem.setAttribute("command", "context");
+        domMenuitem.setAttribute("label", "This command has javascript");
+        domMenuitem.setAttribute("onclick", "alert('command clicked')");
+        domMenu.appendChild(domMenuitem);
+        document.body.appendChild(domMenu);
+        document.getElementById("myLink").setAttribute("contextmenu", "fcltHTML5Menu");
+    </script>
 </body>
 </html>
