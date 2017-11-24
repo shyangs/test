@@ -19,7 +19,9 @@
             domTextarea.select();
             var bln = document.execCommand('copy');
             // domTextarea.remove();
-            alert('command clicked. \n\n' + bln);
+            alert('command clicked. \n'+
+            "document.queryCommandSupported('copy') = "+ document.queryCommandSupported('copy') + "\ndocument.queryCommandEnabled('copy') = " + document.queryCommandEnabled('copy')
+            +"\ndocument.execCommand('copy') = " + bln);
         }
         domMenuitem.addEventListener("click", handle);
         domMenu.appendChild(domMenuitem);
