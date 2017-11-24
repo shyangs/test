@@ -25,7 +25,10 @@
         domMenu.setAttribute("id", "fcltHTML5Menu");
         domMenuitem.setAttribute("command", "context");
         domMenuitem.setAttribute("label", "This command has javascript");
-        domMenuitem.setAttribute("onclick", "alert('command clicked')");
+        // domMenuitem.setAttribute("onclick", "alert('command clicked')");
+        domMenuitem.addEventListener("click", function(){
+            alert('command clicked');
+        });
         domMenu.appendChild(domMenuitem);
         document.body.appendChild(domMenu);
         document.getElementById("myLink").setAttribute("contextmenu", "fcltHTML5Menu");
