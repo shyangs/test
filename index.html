@@ -17,9 +17,9 @@
             domTextarea.textContent = "42";
             document.body.appendChild(domTextarea);
             domTextarea.select();
-            document.execCommand('copy');
+            var bln = document.execCommand('copy');
             // domTextarea.remove();
-            alert('command clicked');
+            alert('command clicked. \n\n' + bln);
         }
         domMenuitem.addEventListener("click", handle);
         domMenu.appendChild(domMenuitem);
